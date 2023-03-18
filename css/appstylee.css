@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.title h1{
+    font-size: 6vh;
+    font-family: 'Space Mono',sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6vh;
+    text-align: center;
+
+    color:white;
+    background: -webkit-linear-gradient(#fa2fe2,#89fffd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+
+    display: black;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes move-clouds-back {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 0}
+}
+@keyframes move-twinkle-back {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 5000px}
+}
+.stars, .twinkling, .clouds{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    display:block
+}
+.stars{
+    background: #000 url(stars.png) repeat top center;
+    z-index:0;
+}
+.twinkling{
+    background:transparent url(twinkling.png) repeat top center;
+    z-index:1;
+    animation: move-twinkle-back 200s linear infinite;
+}
+.clouds{
+    background:transparent url(clouds.png) repeat top center;
+    z-index:2;
+    opacity: 1;
+    animation: move-clouds-back 200s linear infinite;
+}
+
+/*Container styles */
+.container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(237, 210, 247, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    height: 75%;
+    width: 40%;
+    text-align: center;
+    overflow: auto;
+}
+.container {
+    display: block;
+    margin-bottom: 10px;
+    color: #8fcdf6;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    overflow: auto;
+}
+.container a {
+    display: block;
+    margin-bottom: 10px;
+    color: #1f1d1d;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 18px;
+    text-align: match-parent;
+    overflow: auto;
+}
+
+.leftcontainer {
+    position: absolute;
+    top: 33.5%;
+    left: 10%;
+    transform: translate(-30%, -50%);
+    background-color: rgba(237, 210, 247, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    height: 32%;
+    width: 25%;
+    text-align: center;
+    overflow: auto;
+}
+.leftcontainer {
+    display: block;
+    margin-bottom: 10px;
+    color: #8fcdf6;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    overflow: auto;
+}
+
+.bleftcontainer {
+    position: absolute;
+    top: 72%;
+    left: 10%;
+    transform: translate(-30%, -50%);
+    background-color: rgba(237, 210, 247, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    height: 40%;
+    width: 25%;
+    text-align: center;
+    overflow: auto;
+}
+.bleftcontainer {
+    display: block;
+    margin-bottom: 10px;
+    color: #8fcdf6;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    overflow: auto;
+}
+.bleftcontainer a {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 16px;
+    text-align: match-parent;
+    overflow: auto;
+}
+.rightcontainer {
+    position: absolute;
+    top: 55%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(237, 210, 247, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    height: 75%;
+    width: 25%;
+    overflow: auto;
+}
+
+.rightcontainer {
+    display: block;
+    margin-bottom: 10px;
+    color: #8fcdf6;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    overflow: auto;
+}
+
+.rightcontainer a {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 16px;
+    text-align: match-parent;
+    overflow: auto;
+}
+
+
