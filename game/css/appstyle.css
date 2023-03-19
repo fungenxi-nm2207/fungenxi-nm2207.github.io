@@ -6,6 +6,31 @@ body {
   background-color: #000;
 }
 
+/*properties for the various scenes, add fading in effect*/
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 4;
+  animation: fade-in 1s;
+}
+
+.hidden{
+  display:none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .title {
      display: flex;
      flex-direction: column;
@@ -22,11 +47,71 @@ h1 {
   font-family:'Space Mono', sans-serif;
 }
 
-.blink {
-  animation: blink 1s steps(1,end) infinite; 
+/*.subtitle {
+  position: absolute;
+  top: 65%;
+  left: 40%;
+  z-index: 4;
+  color: white;
+  font-family:'Space Mono', sans-serif;
+}
+*/
+
+.button {
+  font-size: 2em;
+  color: white;
+  background-color: black;
+  border: 1vh solid white;
+  border-radius: 4vh;
+  padding: 4vh; 
+  margin: 5vh;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family:'Space Mono', sans-serif;
 }
 
-@keyframes blink {
+.button:hover{
+  color:black;
+  background-color: white;
+  border: 2vh solid black;
+}
+
+#start-button{
+  position: absolute;
+  top: 68%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+
+#page1-button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#page2-button{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#page3-button{
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+/*.blink-border {
+  animation: blink-border 1s ease-in-out infinite; 
+}
+
+@keyframes blink-border {
   0% {
       opacity: 1;
   }
@@ -37,6 +122,7 @@ h1 {
       opacity: 1;
   }
 }
+*/
 
 @keyframes move-clouds-back {
   from {background-position: 0 0;}
@@ -71,3 +157,4 @@ h1 {
   animation: move-clouds-back 200s linear infinite;
 }
 /*Credits to CarlaCodes from GitHub for teaching me how to do starry night animation background*/
+
