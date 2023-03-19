@@ -1,0 +1,1 @@
+// This will be the JS file for my second challenge within the image map, seize the moment
