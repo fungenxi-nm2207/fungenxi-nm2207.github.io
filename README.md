@@ -3,6 +3,12 @@ My NM2207 GitHub portfolio!
 
 This portfolio consists of 
 
-  1. index.html, appscripts and appstyles for my gitHub homepage. Within the gitHub homepage, there are links to my game, the project document, the storyboard and the weekly entries.
-  
-  2. game folder, where it consists of the index.html of my game start page, appscripts and appstyles for the individual challenges within the game + the aesthetics of the game itself.
+appscripts (for final project homepage)
+css (for final project homepage)
+game (within this folder, it consists of another index.html of my game start page, appscripts and css for the contents of the game)
+index.html (The final project homepage. Within it, there are links to the final game, the project document, the storyboard and weekly entries)
+storyboard1.jpg
+storyboard2.jpg
+
+To access the game as a public
+original nm2207 homepage -> click on link for gitHub website -> click on link for game
