@@ -10,10 +10,8 @@ This portfolio consists of
 - storyboard1.jpg
 - storyboard2.jpg
 
-To access the game as a public
-
+<u> To access the game as a public </u>
 original nm2207 homepage -> click on link for gitHub website -> click on link for game
 
-Game structure
-
+<u> Game structure </u>
 input "name" -> click "begin" -> read instructions, click on "next" to go image map -> click on hidden element to go to "the box dodger" -> after completion, explain significance -> click on "next" to go to the same image map -> click on another element to go to "seize the moment" -> after completion, explain significance...(repeats until the final challenge is completed before getting them to restart the game if they want to 
