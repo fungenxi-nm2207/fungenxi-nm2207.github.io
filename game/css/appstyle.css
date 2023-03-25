@@ -46,6 +46,7 @@ h1 {
   text-align: center;
   font-family:'Space Mono', sans-serif;
 }
+/* CSS for buttons */
 
 .button {
   font-size: 2em;
@@ -67,8 +68,6 @@ h1 {
 }
 /* Used '.' for class, '#' for id */
 #start-button{
-  /*display: flex;
-  justify-content: center;*/
   position: absolute;
   top: 68%;
   left: 47%;
@@ -96,8 +95,22 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-
-
+/* CSS for game pages */
+#introduction{
+  position: absolute;
+  border-radius: 30px;
+  z-index: 3;
+  height: 45%;
+  width: 40%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3em;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  font-size: 1.5em;
+  color: blanchedalmond;
+}
 
 /*.blink-border {
   animation: blink-border 1s ease-in-out infinite; 

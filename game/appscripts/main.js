@@ -5,7 +5,7 @@ const gamePage1 = document.getElementById("game-page-1");
 const gamePage2 = document.getElementById("game-page-2");
 const gamePage3 = document.getElementById("game-page-3");
 const gamePage4 = document.getElementById("game-page-4");
-// JS prompt code, but it is not working since it interferes with addEventListener function
+// JS prompt code
 let urname = prompt("please enter your name!");
 // shortcut for if(urname){} else{urname="mysterious stranger"}
 urname = urname || "mysterious stranger";
@@ -19,6 +19,7 @@ startbutton.addEventListener("click", function (){
 });
 
 // Page 1 (instructions) + JS prompt code
+
 introduction.innerHTML = "hey " + urname + ", welcome to the box, a game that will take you on a journey through the mysteries of life."; 
 // Page 1 (instructions) next button
 const page1Button = document.getElementById("page1-button");

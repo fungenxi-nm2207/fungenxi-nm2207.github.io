@@ -1,0 +1,51 @@
+body {
+    font-family: 'Space Mono', monospace;
+    background-color:lightblue;
+    color: #2e3d51;
+    margin-right: 5%;
+}
+
+header {
+    background-color: lightblue;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Trispace', sans-serif;
+    color: #2e3d51;
+    margin-left: 5%;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Trispace', sans-serif;
+    color: #2e3d51;
+    margin-left: 5%;
+}
+
+h3 {
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Trispace', sans-serif;
+    color: #2e3d51;
+    margin-left: 5%;
+}
+
+p {
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Trispace', sans-serif;
+    color: #2e3d51;
+    margin-left: 5%;
+}
+
+a {
+    color: #2e3d51;
+}
