@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> weekly journal :D </title>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Trispace:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/appstyleee.css">
+    </head>
+
+    <body>
+            <header>
+                <h1> my weekly journals :D </h1>
+            </header>
+        </div>
+
+        <section class="week">
+            <h2> WEEK 8 </h2>
+            <div class="entry">
+                <u> <h3> 7 March 2023 </h3> </u>
+                <p> I have finally decided on the theme of the game. It would be an adventure/puzzle game, where players will attempt to complete challenges or solve mysteries to move on to the next level. Currently also playing Growtopia again to get some inspiration! xD </p>
+            </div>
+        <section class="week">
+            <h2> WEEK 9 </h2>
+            <div class="entry">
+                <u> <h3> 17 March 2023 </h3> </u>
+                <p> Problems faced: Experimented with different CSS styles. Attempted to code the "flashlight" function for one of my challenges, where players will use their cursors as flashlights to look for clues and escape the dark room.
+                    However, after trying it out for about 6 hours, I was only able to create a movable circular cursor, and the contents seemed to be hidden behind the black background. Tried adjusting the z-index, but to no avail. I have decided to instead move on and come up with other challenges instead.
+                    <br> <br>
+                    New idea: Named the game "the box", to reflect the ups and downs of life. In this game, players will face various obstacles and difficulties, such as having to dodge boxes and clicking on disappearing boxes at the right time. Towards the end of each game, the significance of it will be explained, before moving forward.
+                    <br> <br>
+                    Progress: Decided on the overall look of my game -- a space themed background, with blinking stars and moving clouds. Thought that it fitted the idea of the box, since once the player escapes "the box", there will be a vast and open universe for them to explore. I also finalised how the game elements are linked to one another, through the buttons. I have also added interesting CSS effects when I hover over the buttons. Upon the click of each button, the game page will transition to another game page, in a fading effect. The explanations of these mechanisms are included in my
+                    <u><a href="https://docs.google.com/document/d/14MwKvw38vlgOwlVXLjzJBEixIKedfAKWlmblG9oHnnE/edit?usp=sharing"> Project Document</a></u>!
+
+                </p>
+            </div>
+        <section class="week">
+            <h2> WEEK 10 </h2>
+            <div class="entry">
+                <u> <h3> 24 March 2023 </h3> </u>
+                <p> Problems faced: To add interactivity to the game, I have decided to add a user prompt using Javascript, but that function was not showing up correctly. I thought that it was due to the 'prompt' function directly clashing with the 'addEventListener' function that I added to listen for players' clicks to show the hidden page. After talking to Wien about my problem during class, the solution was to add a 'id= introduction' next to my 'div class= introduction'. After reflecting, I realised the problem.
+                <br> <br>
+                In the JS prompt code, I indicated 'introduction.innerHTML= "hey"... ' The system assumed 'introduction' to be a reference to an HTML element with an ID of 'introduction', in which it will then set the content of that element to the string. By putting only 'div class= introduction' it was not able to 'getElementById' nor use the 'innerHTML' property.      
+                <br> <br>
+                Progress: Fixed the problem, now looking at classical music and potential game sounds! xD Also currently working on the mechanics of the dodging game -- whether to let the players click according to the music or not.
+                <br> <br> <br>
+                <u>Q1: What does a game do?</u>
+                <br>
+                In my game, players will realise that they are trapped in "the box", where the only way to get out is to complete challenges and solve mysteries along the way. Challenges would include dodging obstacles, clicking the right boxes at the right time, and maybe some puzzles, that require users to think out of the box!
+                <br> <br>
+                <u>Q2: What are the rules it follows?</u>
+                <br>
+                #Challenge 1: The Box Dodger
+                <br>
+                The player must control a character using the arrow keys (left and right) to avoid the falling boxes. These boxes might fall at different timings, so it is up to the players to react in time. If the character did not manage to dodge the box in time, the challenge is failed and they must restart again. The player must complete the challenge within a certain time limit to progress to the next challenge. 
+                <br> <br>
+                #Challenge 2: Seize the opportunity
+                <br>
+                Player is presented with an empty screen, and have to wait for the boxes to appear and clicking on it before it disappears, within a set target. The players will be presented with other shapes as well, to increase the difficulty level. If the player clicks on another shape (e.g triangle), the player must restart the challenge. 
+                <br> <br>
+                <u>Q3: What can the user do?</u>
+                <br>
+                They are forced to restart each challenge until they succeed. They can control their arrows and cursors when playing the game.
+                <br> <br>
+                <u>Q4: What does the program do for each user action?</u>
+                <br>
+                Begin game button click: When user clicks the button, the 'startbutton' element is selected when using JS's 'getElementById()' method. An event listener is added to the 'startbutton' element using the 'addEventListener()', which listens for a "click" event. When the user clicks the button, the event listener triggers a function that adds the 'hidden' CSS class to the 'startPage' element and removes the 'hidden' class from the 'gamePage1' element using 'classList.add' and 'classList.remove'. The same mechanic is applied for all of the buttons, when navigating to the next few game pages. However, for the actual game pages, I would put it such that the buttons are only visible after the players complete the challenges.
+                <br> <br> 
+                Box dodger gameplay: Concepts like arrays and conditional statements ('if') are used. Power-ups such as invisibility and additional points are also implemented using JS. The users interact with it by controlling the character with left and right arrows.
+                <br> <br>
+                <u>Q5: When does the game end?</u>
+                <br>
+                It ends when the player successfully completes all the challenges and reaches the end of the game. At the end of the game, there will be a mini interactive statement between me and the user; something similar to "why are you still here?". They are then able to decide whether to restart the game, or exit.
+                <br>
+            </div>
+        </section>
+
+
+    </body>
