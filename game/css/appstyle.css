@@ -65,8 +65,10 @@ h1 {
   background-color: white;
   border: 2vh solid black;
 }
-
+/* Used '.' for class, '#' for id */
 #start-button{
+  /*display: flex;
+  justify-content: center;*/
   position: absolute;
   top: 68%;
   left: 47%;
