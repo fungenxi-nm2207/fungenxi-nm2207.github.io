@@ -1,6 +1,39 @@
 /*this will be the css file used for the first challenge in the image map, "the box dodger"
 the background for these games will be the same, so some of the css codes will duplicate from the main.js file*/
 
+body {
+    background: #333;
+}
 
+.header {
+    padding-bottom: 2px;
+    color:antiquewhite;
+    font-family:'Space Mono', sans-serif;
+}
 
+.grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 40px);
+    padding: 5px;
+    gap: 3px;
+    border: 1px solid antiquewhite;
+    background: black;
+}
 
+.cell {
+    height: 40px;
+}
+
+.enemy {
+    width: 100%;
+    height: 100%;
+    background: #f31414;
+    border-radius: 3%;
+}
+
+.player {
+    width: 100%;
+    height: 100%;
+    background: rgb(68, 184, 223);
+    border-radius: 3%;
+}

@@ -29,7 +29,13 @@ page1Button.addEventListener("click", function (){
 });
 
 // Page 2 set-up
-// Insert: Clickable image map to map to the different challenges
+// Challenge 1: the box dodger
+    // using concepts like Array, .slice, const, if
+    // power-ups such as invisibility and additional points 
+
+
+
+
 // Page 2 button
 const page2Button = document.getElementById("page2-button");
 page2Button.addEventListener("click", function (){
@@ -38,9 +44,7 @@ page2Button.addEventListener("click", function (){
 });
 
 // Page 3 set-up
-// Insert first challenge: the box dodger
-    // using concepts like Array, .slice, const, if
-    // power-ups such as invisibility and additional points 
+
 // Page 3 button
 const page3Button = document.getElementById("page3-button");
 page3Button.addEventListener("click", function (){

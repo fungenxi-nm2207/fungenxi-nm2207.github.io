@@ -1,3 +1,37 @@
+@keyframes move-clouds-back {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 0}
+}
+@keyframes move-twinkle-back {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 5000px}
+}
+.stars, .twinkling, .clouds{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width: 100%;
+  display:block
+}
+.stars{
+  background: #000 url(stars.png) repeat top center;
+  z-index:0;
+}
+.twinkling{
+  background:transparent url(twinkling.png) repeat top center;
+  z-index:1;
+  animation: move-twinkle-back 200s linear infinite;
+}
+.clouds{
+  background:transparent url(clouds.png) repeat top center;
+  z-index:2;
+  opacity: 1;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+
 body {
   display: flex;
   justify-content: center;
@@ -112,6 +146,14 @@ h1 {
   color: blanchedalmond;
 }
 
+
+
+
+
+
+
+
+
 /*.blink-border {
   animation: blink-border 1s ease-in-out infinite; 
 }
@@ -129,37 +171,6 @@ h1 {
 }
 */
 
-@keyframes move-clouds-back {
-  from {background-position: 0 0;}
-  to {background-position: 10000px 0}
-}
-@keyframes move-twinkle-back {
-  from {background-position: 0 0;}
-  to {background-position: 10000px 5000px}
-}
-.stars, .twinkling, .clouds{
-  position: absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  width: 100%;
-  display:block
-}
-.stars{
-  background: #000 url(stars.png) repeat top center;
-  z-index:0;
-}
-.twinkling{
-  background:transparent url(twinkling.png) repeat top center;
-  z-index:1;
-  animation: move-twinkle-back 200s linear infinite;
-}
-.clouds{
-  background:transparent url(clouds.png) repeat top center;
-  z-index:2;
-  opacity: 1;
-  animation: move-clouds-back 200s linear infinite;
-}
+
 /*Credits to CarlaCodes from GitHub for teaching me how to do starry night animation background*/
 
