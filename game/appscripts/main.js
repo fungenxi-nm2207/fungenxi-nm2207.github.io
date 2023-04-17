@@ -1,16 +1,20 @@
-// This JS file mainly sets up the start page and game page structures
 // The start page and game pages
-
+document.addEventListener('DOMContentLoaded', function() {
 const startPage = document.getElementById("start-page");
 const gamePage1 = document.getElementById("game-page-1");
 const gamePage2 = document.getElementById("game-page-2");
-const gamePage3 = document.getElementById("game-page-3");
-const gamePage4 = document.getElementById("game-page-4");
+//const gamePage3 = document.getElementById("game-page-3");
+//const gamePage4 = document.getElementById("game-page-4");
+
 // JS prompt code
 let urname = prompt("please enter your name!");
-// shortcut for if(urname){} else{urname="mysterious stranger"}
-urname = urname || "player";
+// same as if(urname){} else{urname="mysterious stranger"}
+urname = urname || "Me";
 console.log("Hello " + urname + "!");
+document.getElementById("line-2").innerHTML = urname + ": Who's there??";
+document.getElementById("line-6").innerHTML = urname + ": What help??";
+document.getElementById("line-8").innerHTML = urname + ": How did I get here??";
+document.getElementById("line-11").innerHTML = urname + ": What do I need to do?";
 
 // Start game button
 const startbutton = document.getElementById("start-button");
@@ -19,49 +23,43 @@ startbutton.addEventListener("click", function (){
   gamePage1.classList.remove("hidden");
 });
 
-// Page 1 (instructions) + JS prompt code
-
-introduction.innerHTML = "<h2>Welcome, " + urname + "!</h2><p> The Box has been waiting for one like you, one with the cunning and courage to navigate its treacherous depths. You have been brought here for a purpose, a purpose that will test you to your very limits. Only you can rise to the challenge... <p> But fear not, for you will not face this journey alone. <p> You will be armed with your wits, your courage, and the clues that lie ahead. Together, we will unlock the secrets of The Box, and only then will you emerge victorious. <p><h2>Are you ready to begin?</h2>"; 
-
-// Page 1 (instructions) next button
-const page1Button = document.getElementById("page1-button");
-page1Button.addEventListener("click", function (){
+// Page 1 set-up
+const page1ButtonA = document.getElementById("page1-button-A");
+page1ButtonA.addEventListener("click", function (){
   gamePage1.classList.add("hidden");
-  gamePage2.classList.remove("hidden");
+  instructions.classList.remove("hidden");
 });
 
+// Instructions Page set-up
+const instructionsButtonX = document.getElementById("instructions-buttonX");
+instructionsButtonX.addEventListener("click", function(){
+  instructions.classList.add("hidden");
+  gamePage2.classList.remove("hidden");
+  window.page2Start = true;
+  console.log(window.page2Start);
+});
+  
 // Page 2 set-up
-// Challenge 1: the box dodger
-    // using concepts like Array, .slice, const, if
-    // power-ups such as invisibility and additional points 
+// Hide the button initially
+const page2Button = document.getElementById("page2-button");
+page2Button.classList.add("hidden");
 
+// Show the button when the game is over
+function showPage2button(){
+  if(window.gameOver) {
+    page2Button.classList.remove("hidden");
+  }
+}
 
-
+// Call the function whenever the game status changes
+  window.addEventListener('gameOver', showPage2button);
 
 // Page 2 button
-const page2Button = document.getElementById("page2-button");
-page2Button.addEventListener("click", function (){
-  gamePage2.classList.add("hidden");
-  gamePage3.classList.remove("hidden");
+  page2Button.addEventListener("click", function (){
+    gamePage2.classList.add("hidden");
+    gamePage1.classList.remove("hidden");
+  }); 
 });
-
-// Page 3 set-up
-
-// Page 3 button
-const page3Button = document.getElementById("page3-button");
-page3Button.addEventListener("click", function (){
-  gamePage3.classList.add("hidden");
-  gamePage4.classList.remove("hidden");
-});
-// Page 4 set-up
-  // To explain significance of the game 
-// Page 4 button
-const page4Button = document.getElementById("page4-button");
-page4Button.addEventListener("click", function (){
-  gamePage4.classList.add("hidden");
-  startPage.classList.remove("hidden");
-});
-
 
 
 

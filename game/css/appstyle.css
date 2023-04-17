@@ -80,7 +80,25 @@ h1 {
   text-align: center;
   font-family:'Space Mono', sans-serif;
 }
-/* CSS for buttons */
+
+.start-button {
+  font-size: 2em;
+  color: white;
+  background-color: black;
+  border: 1vh solid white;
+  border-radius: 4vh;
+  padding: 4vh; 
+  margin: 5vh;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family:'Space Mono', sans-serif;
+}
+
+.start-button:hover{
+  color:black;
+  background-color: white;
+  border: 2vh solid black;
+}
 
 .button {
   font-size: 2em;
@@ -108,24 +126,66 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-#page1-button{
+#page1-button-A{
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 53.5s 1 forwards;
+  position: absolute;
+  top: 73%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+}
+.buttonA {
+  font-size: 2em;
+  color: white;
+  background-color: black;
+  border: 1vh solid white;
+  border-radius: 90%;
+  padding: 4vh; 
+  margin: 5vh;
+  width: 10%;
+  height: 30%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family:'Space Mono', sans-serif;
+}
+.buttonA:hover{
+  color:black;
+  background-color: rgb(133, 120, 218);
+  border: 2vh solid black;
+}
+
+#instructions-buttonX{
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 5s 1 forwards;
   position: absolute;
   top: 80%;
-  left: 75%;
+  left: 47%;
   transform: translate(-50%, -50%);
+}
+.buttonX {
+  font-size: 2em;
+  color: white;
+  background-color: black;
+  border: 1vh solid white;
+  border-radius: 90%;
+  padding: 4vh; 
+  margin: 5vh;
+  width: 5%;
+  height: 10%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family:'Space Mono', sans-serif;
+}
+.buttonX:hover{
+  color:black;
+  background-color: white;
+  border: 2vh solid black;
 }
 
 #page2-button{
   position: absolute;
-  top: 80%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-}
-
-#page3-button{
-  position: absolute;
-  top: 80%;
-  left: 75%;
+  top: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -139,32 +199,271 @@ h1 {
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0;
+  padding: 50;
   text-align: justify;
   font-family: 'Space Mono', sans-serif;
   font-size: 100%;
   color: blanchedalmond;
 }
 
-
-
-
-/*.blink-border {
-  animation: blink-border 1s ease-in-out infinite; 
+#instructions li{
+  color: rgb(171, 171, 225);
+  font-size: 20px;
+  text-align: center;
 }
 
-@keyframes blink-border {
+#instructions ul{
+  color: rgb(250, 139, 139);
+  font-size: 23px;
+  text-align: center;
+}
+
+#line-1 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 0s 1 forwards, shatter 3s ease-in-out 4.5s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-2 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 2.5s 1 forwards, shatter 3s ease-in-out 4.5s 1 forwards;
+  font-size: 2.2em;
+  color: rgb(197, 217, 250);
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-3 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 5s 1 forwards, fade-out 1s ease-in-out 8s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-4 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 9s 1 forwards, fade-out 1s ease-in-out 13s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-5 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 14s 1 forwards, fade-out 1s ease-in-out 20s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-6 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 17s 1 forwards, fade-out 1s ease-in-out 20s 1 forwards;
+  font-size: 2.2em;
+  color: rgb(197, 217, 250);
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-7 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 21s 1 forwards, fade-out 1s ease-in-out 30s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-8 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 26s 1 forwards, fade-out 1s ease-in-out 30s 1 forwards;
+  font-size: 2.2em;
+  color: rgb(197, 217, 250);
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-9 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 31s 1 forwards, fade-out 1s ease-in-out 35s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-10 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 37s 1 forwards, fade-out 1s ease-in-out 45s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-11 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 40s 1 forwards, fade-out 1s ease-in-out 45s 1 forwards;
+  font-size: 2.2em;
+  color: rgb(197, 217, 250);
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-12 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 47s 1 forwards, fade-out 1s ease-in-out 60s 1 forwards;
+  font-size: 2.2em;
+  color: blanchedalmond;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-13 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 63s 1 forwards, fade-out 1s ease-in-out 67s 1 forwards;
+  font-size: 2.2em;
+  color: rgb(206, 243, 210);
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-14 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 70s 1 forwards, fade-out 1s ease-in-out 73s 1 forwards;
+  font-size: 2.2em;
+  color: pink;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#line-15 {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 75s 1 forwards, shake 2s ease-in-out 76s 1 forwards;
+  font-size: 2.2em;
+  color: pink;
+  text-align: center;
+  font-family: 'Space Mono', sans-serif;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+@keyframes fade-in {
   0% {
-      opacity: 1;
-  }
-  50% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
-*/
+
+@keyframes shatter {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%) scale(2);
+  }
+  100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50%) scale(2.5);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  10% { transform: translate(-50%, -50%) rotate(-5deg); }
+  20% { transform: translate(-50%, -50%) rotate(5deg); }
+  30% { transform: translate(-50%, -50%) rotate(-5deg); }
+  40% { transform: translate(-50%, -50%) rotate(5deg); }
+  50% { transform: translate(-50%, -50%) rotate(-5deg); }
+  60% { transform: translate(-50%, -50%) rotate(5deg); }
+  70% { transform: translate(-50%, -50%) rotate(-5deg); }
+  80% { transform: translate(-50%, -50%) rotate(5deg); }
+  90% { transform: translate(-50%, -50%) rotate(-5deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+
 
 
 /*Credits to CarlaCodes from GitHub for teaching me how to do starry night animation background*/

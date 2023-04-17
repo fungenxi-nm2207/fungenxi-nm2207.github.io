@@ -1,22 +1,20 @@
-// Challenge 1: the box dodger
-
-//export default to export the game onto website
-
+// Level 1: Collect 8 coins, reach portal, 3 lives
 // Getting and creating canvas element
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
+const page2Button = document.getElementById("page2-button");
 
 // Variables
 let player;
-let bullets = [];
+let bullets = []; // Since there can be multiple bullets on the screen at the same time, so storing them in arrays allows for the program to track ad update their positions and states independently.
 let bulletInterval = 0; // Counter for bullet timing
-let golds = []; 
+let golds = []; // Same logic as the bullets array
 let gameOver = false; // Initialised to false. Used to keep track whether player lost
 let gameWon = false; // Initialised to false. Used to keep track whether player won
 let pressedKeyX = "none"; // Initialised to "none", indicating that no key has been pressed yet
 let pressedKeyY = "none";
 
-// Player
+// Defining the starting conditions of the Player, using Class, since it makes the Player a reusable code that can be modified 
 class Player {
     constructor() { 
         this.x = 240; // X-coordinate of player's starting point
@@ -24,6 +22,7 @@ class Player {
         this.width = 20;
         this.height = 20;
         this.lives = 3;
+        this.score = 0;
         this.golds = 0; // Player required to collect certain number of golds, and this number is first initialised to 0
         this.update = function(){
             if (this.lives <= 0) { // If player has less than or equals to 0 lives, game over is true
@@ -33,6 +32,7 @@ class Player {
                 gameWon = true;
             }
         };
+
         this.draw = function() { // Drawing player on the canvas
             ctx.fillStyle = "blue"; // Fill style to blue
             ctx.fillRect(this.x, this.y, this.width, this.height); // Draws rectangle using player's position and dimensions
@@ -44,6 +44,7 @@ class Player {
 }
 player = new Player; // Updates player's position according to user input
 function runPlayer() {
+
     player.update();
     player.draw();
     if (pressedKeyX == "Left" && player.x > 0) { // If user pressed left arrow key, and player's x position is > 0, player's position is decreased by 2px. This in some sense, controls the speed of how fast the player moves
@@ -61,13 +62,17 @@ function runPlayer() {
 }    
 
 
-// Event Listeners
+// Event Listeners, one for keydown and one for keyup
+
+// When a key is pressed down, the event listener updates the value of a variable to the corresponding direction
 window.addEventListener("keydown", function(e) {
-    if (e.code === "ArrowUp" && pressedKeyY == "none") pressedKeyY = "Up";
+    if (e.code === "ArrowUp" && pressedKeyY == "none") pressedKeyY = "Up"; // Checks to see value of the 'code' property of the 'e' event object, to determine which arrow key released
     else if (e.code === "ArrowDown" && pressedKeyY == "none") pressedKeyY = "Down";
     else if (e.code === "ArrowLeft" && pressedKeyX == "none") pressedKeyX = "Left";
     else if (e.code === "ArrowRight" && pressedKeyX == "none") pressedKeyX = "Right";
 });
+
+// When a key is released, the event listener updates the value of a variable to the corresponding direction
 window.addEventListener("keyup", function(e) {
     if (e.code === "ArrowUp" && pressedKeyY == "Up") pressedKeyY = "none";
     else if (e.code === "ArrowDown" && pressedKeyY == "Down") pressedKeyY = "none";
@@ -76,8 +81,10 @@ window.addEventListener("keyup", function(e) {
 });
 
 // Gold
+
+// Creates class Gold, which takes in 2 arguments, x and y, which are the coordinates of the gold object on the canvas
 class Gold {
-    constructor(x,y) {
+    constructor(x,y) { // Used the constructor function to 
         this.x = x;
         this.y = y;
         this.width = 25;
@@ -86,12 +93,17 @@ class Gold {
         this.image = new Image();
         this.image.src = "css/gold.png";
     }
+
+    // Checks if gold has been collected by player using collision detection function and if it hasn't, increments the player's score and sets the collected property to true.
     update() {
         if(!this.collected && collision(player,this)) {
             this.collected = true;
             player.score++;
+            console.log(player.score);
         }
     }
+
+    // Draws gold object on canvas only if it hasn't been collected yet
     draw() {
         if(!this.collected) {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -99,17 +111,22 @@ class Gold {
     }
 }
 
+// Loop to create 8 gold objects with randomly generated x and y coordinates
 for (let i=0; i<8; i++) {
     let x = Math.floor(Math.random()*(canvas.width - 50)) + 0;
     let y = Math.floor(Math.random()*(canvas.width - 30)) + 0;
+    // Stored in the "golds" array, learnt from class
     golds.push(new Gold(x,y));
 }
 
 function runGolds() {
+
+    // Loop that iterates over all elements in "golds" array, starts by initialising variable "i" to 0, then checks whether "i" is less than the length of the "golds" array. If it is, execute code inside loop body
     for (let i=0; i<golds.length; i++){
+        // which updates and draws gold objects at the index position of "i"
         golds[i].update();
         golds[i].draw();
-    }
+    } // After executing the code inside the loop body, increments of "i" by 1 and goes back to check the condition again. Loop continue until "i" is no longer less than the length of the "golds" array
 }
   
 // Bullets
@@ -132,8 +149,12 @@ class Bullet {
         }
     }
 }
+
+// Manages game bullets
 function runBullets() {
     bulletInterval++;
+
+    // Checks if bulletInterval is multiple of 52. If it is, function generates 4 new bullets with random coordinates and speeds, and adds them to the "bullets" array
     if (bulletInterval % 52 == 0) {
         let y1 = Math.floor(Math.random () * (491 - 0)) + 0;
         let y2 = Math.floor(Math.random () * (491 - 0)) + 0;
@@ -145,24 +166,29 @@ function runBullets() {
         bullets.push(new Bullet(x2, 500, 0, -5));
 
     }
+    // Iterates through each bullet in the "bullets" array, calling the update() and draw() methods on each one to move and display them on the canvas
     for (let i = 0; i < bullets.length; i++) {
         bullets[i].update();
         bullets[i].draw();
+        // Checks if a bullet is outside of the game's bounds. If it is outside of bounds, it is removed from the "bullets" array using splice()
         if (bullets[i] &&
             bullets[i].x < -11 || bullets[i].x > 500 ||
             bullets[i].y < -11 || bullets[i].y > 500) {
+                // Removes bullets that collides with the player
                 bullets.splice(i, 1);
             }
+            // Checks if a bullet is colliding with player. If collision detected, player's lives property decremented, and bullet is removed from "bullets" array. i-- used to prevent skipping a bullet in the array when one is removed
             if (bullets[i] && collision(player, bullets[i])) {
                 player.lives--;
                 bullets.splice(i,1);
                 i--;
-
             }
     }
 }
 
 // Collision
+
+// function takes in 2 objects, first and second as parameters and checks if their rectangular areas overlap. If they do, it returns 'true', indicating that collision occured
 function collision(first,second) {
     if (first.x < second.x + second.width &&
         first.x + first.width > second.x &&
@@ -173,6 +199,8 @@ function collision(first,second) {
 }
 
 // Portal
+
+// Portal class represents portal object
 class Portal {
     constructor() {
         this.image = new Image();
@@ -202,17 +230,7 @@ class Portal {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         }
     }
-
-    update() {
-        if(player.score < 5){
-            return;
-        }
-        if(collision(player,this)) {
-            gameOver = true;
-            gameWon = false;
-        }
-    }
-
+    // Checks if player's score is less than 8. If it is, then it returns and does not draw portal on the canvas. 
     draw(){
         if(player.score < 8){
             return;
@@ -220,8 +238,9 @@ class Portal {
         ctx.drawImage(this.image, this.x, this.y, 40, 40);
     }
 
+    // Checks if it is less than 8. If it is, checks for collision. If collision occurs, decides whether gameOver or gameWon.
     update() {
-        if(player.score >= 8){
+        if(player.score < 8){
             return;
         }
         if(collision(player,this)) {
@@ -230,6 +249,7 @@ class Portal {
         }
     }
 
+    //If score is greater than or equal to 8, draws portal image. If less than 10, draws portal image on canvas at the current 'x' and 'y' position of portal object, with width and height of 40px.
     draw(){
         if(player.score >= 10){
             return;
@@ -247,9 +267,16 @@ function runPortal() {
 }
 
 
-// Run game
+// Run game in the background while the game is being played
 function gameLoop(){
-   
+
+    //Checks whether page2Start variable is true or not. If not true, gameLoop() is called again after a delay of 100 milliseconds, using window.setTimeout() function
+    if (!window.page2Start) {
+        window.setTimeout(gameLoop, 100);
+        return
+    }; // Done to prevent game loop from running until the player has started the game
+
+    // If page2Start is true, canvas is cleared using below method, which clears entire canvas before each frame of game loop is rendered.
     ctx.clearRect(0,0, canvas.width, canvas.height);
 
     runPlayer();
@@ -261,6 +288,7 @@ function gameLoop(){
         ctx.font = "50px Monospace";
         ctx.fillStyle = "red";
         ctx.fillText("Game Over", 133, 250);
+        page2Button.classList.remove("hidden");
     return;
     }
 // Check for game won
@@ -268,147 +296,19 @@ function gameLoop(){
         ctx.font = "50px Monospace";
         ctx.fillStyle = "red";
         ctx.fillText("Congrats!", 150, 250);
+        console.log(player.score);
+        page2Button.classList.remove("hidden");
         return;
     }
 
-
-
+    // Checks for collision between player and portal
     portal.update();
+    // Draws portal on canvas
     portal.draw();
     
+    //Request that the gameLoop() functions be called again before the next repaint of canvas, creating a continuous game loop that updates and draws game elements
     window.requestAnimationFrame(gameLoop);
 }
 
+// Calls for the game to loop
 gameLoop();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//const cells = Array.from(document.querySelectorAll(".cell"));
-//const enemyCells = cells.slice(0, 30);
-//const playerCells = cells.slice(30);
-//const scoreDisplay = document.querySelector(".score");
-//const audio = document.querySelector("audio");
-
-// Game logic
-//let dropCount, speed, score;
-//reset();
-//document.addEventListener("keydown", e => {
-  //  if (!dropCount) {
-    //    startGame();
-    //}
-    //const player = document.querySelector(".player");
-
-    //if (e.key === "ArrowRight" && playerCells.includes(player.parentElement.nextElementSibling)) {
-      //  player.parentElement.nextElementSibling.appendChild(player);
-    //}
-
-    //if (e.key === "ArrowLeft" && playerCells.includes(player.parentElement.previousElementSibling)) {
-      //  player.parentElement.previousElementSibling.appendChild(player);
-  //  }
-//});
-
-//function reset (){
-  //  dropCount = 0;
-    //speed = 1000;
-    //score = 0;
-    //scoreDisplay.innerHTML = "0";
-
-    //cells.forEach(cell => cell.innerHTML = "" );
-    //playerCells[1].innerHTML = '<div class="player"></div>';
-//}
-
-//function startGame() {
-  //  reset();
-    //console.log("Starting new game");
-    //audio.play(); 
-//    loop();
-//}
-
-//function loop() {
-   // let stopGame = false;
-    //for (let i = enemyCells.length -1; i >= 0; i--) {
-      //  const cell = enemyCells[i];
-      //  const nextCell = cells[i + 3];
-      //  const enemy = cell.children[0];
-
-      // if (!enemy) {
-         //   continue;
-        //}
-
-      //  nextCell.appendChild(enemy);
-      //  if (playerCells.includes(nextCell)) {
-         //   if (nextCell.querySelector(".player")) {
-        //        stopGame = true;
-       //     } else {
-             //   score++;
-    // Making sure that the speed don't go negative
-         //       speed = Math.max(100, speed - 15);
-        //        scoreDisplay.innerHTML = score;
-        //        enemy.remove();
-         //   }
-      //  }
-  //  }
-
-    // Calculate current beat of the music and use it to determine when to drop enemy cells
-    //const beatsPerSecond = 1 / (audio.duration / audio.buffered.length);
-    //const currentBeat = audio.currentTime * beatsPerSecond;
-
-    // Dropping enemy cells every other beat
-   // if (dropCount % 2 === 0){
-   //     const position = Math.floor(Math.random()*3);
-   //     enemyCells[position].innerHTML = '<div class="enemy"></div>'
-   // }
-  //  if (stopGame) {
-       // audio.pause();
-     //   alert('Your score: ' + score + ". Close this window to play again.");
-     //   reset();
-   // } else {
-        //dropCount++;
-       //setTimeout(loop, speed);
-
-    //}
-//}
