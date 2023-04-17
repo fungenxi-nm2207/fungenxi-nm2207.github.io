@@ -73,22 +73,44 @@
                 <u>Q5: When does the game end?</u>
                 <br>
                 It ends when the player successfully completes all the challenges and reaches the end of the game. At the end of the game, there will be a mini interactive statement between me and the user; something similar to "why are you still here?". They are then able to decide whether to restart the game, or exit.
-                <br> <br> <br>      
+                <br>      
             </div>
+        <section class="week">
+            <h2> WEEK 11 </h2> 
+                <div class="entry">
+                    <u> <h3> 31 March 2023 </h3> </u>
+                    <p> Problems faced: A problem is that I am unable to make the player object move to the right, even though there is no problem with the code. I am also trying to make the obstacles move much more smoothly.
+                        <br> <br>
+                        Progress: I am currently working on the logic of the box dodger game, but I am uncertain whether or not to split up the files, nor how to link the game files together. I have decided not to use an image map, since that is redundant in my opinion. The goal of the box dodger game is to move a character left and right to avoid obstacles moving towards it. Currently, the design of it is such that the box will fall downwards using the concept of cells, but I am also looking at the possibility of it being coming at different directions, and players can use more than the left and right keys. I am really afraid I might not have enough time to complete my game :"" so I will be working on it everyday for Week 12.
+                        Nonetheless, I have learnt more new stuff, such as constructor (x, y), and Class to create objects, which is super interesting! I will probably use that for my game.
+                        <br>
+                    </p>
+                </div>
+        <section class="week">
+            <h2> WEEK 12 </h2> 
+                <div class="entry">
+                    <u> <h3> ??? </h3> </u>
+                    <p> Problems faced: Decided to instead go with the game of dodging bullets. Had many problems, such as being unable to load the content properly, but fixed that through DOMContentLoaded function. Had a problem with how to link the game together as well.
+                        <br> <br>
+                         Progress: I am currently working on the logic of the game, and have decided to separate the JS files. I faced the problem of being unable to connect both JS together -- the main.js and avoider.js, and tried many methods such as copy-pasting the whole avoider.js code into the main.js file, tried changing the sequence in which the defer src js file was placed, but all to no avail. I might just end up using href to link my pages together. Nonetheless, the logic still feels quite simple, and I am currently thinking of other levels to make my game better. Perhaps, a level that collects the bullets instead and shoots at an opponent? At the very least, I have my CSS and HTML completed, just that the logic of the game might need a little bit of work. I have also looked into export default to try to import 1 JS file to another JS file, but it seemed a little complicated, and I am still figuring that out. I realised that the thing about creating games is that there will always be new ideas and new possibilities; so many things can change in a day! What I initially planned out is now completely different from what I have, which is quite wasted, because I spent so much time working on the box avoider game logic, but ended up needing to remove the whole thing. I have also written out a "script" per se for the narrative of my game. I hope it's interesting enough! Also, I reflected alot about what is the main purpose of my game, and realising that perhaps it is better to focus on depth instead of breath.
+                        <br> <br>
+                    </p>
+                </div>
+        
+                <section class="week">
+                    <h2> WEEK 13 </h2> 
+                        <div class="entry">
+                            <u> <h3> 17 April 2023 </h3> </u>
+                            <p> Problems faced: Bugs kept suddenly coming out from my game out of nowhere. Initially, I set the condition such that only when players collected all 8 coins, they are able to enter the door. Now, without needing to collect all 8 coins, players can still pass the game as well. Another problem I faced is trying to make my narrative come out at the right time, following a particular sequence. I tried using arrays to do that, but it turned out rather difficult to control, since I essentially want 2 lines of text to fade in at different timings, but leave at the same time. This got complicated. There was also the issue of being unable to hide the portals / buttons properly, since most of them were completed using CSS, players will be able to click it even if they did not go through the whole dialogue. I guess that can be a good thing for players, allowing them to skip over long, boring narrative. I also have the problem of restarting the game. Tried creating a new function called resetGame, where a newPLayer is defined to have the initial conditions (0 golds, 3 lives, etc), but it is still not working properly.
+                                <br> <br>
+                                 Progress: I was able to fix the bug of the door not checking the right conditions before determining if the game condition is true or false. It turned out that I had a minor typo in the code, which flipped the < sign to >, thus made it unable to verify the conditions correctly. As I am trying to make my narrative come out properly at the right time, I am still unable to use arrays to control the animations. Therefore, I ended up defining each line of narrative, calling them by their name in the main.JS file to add interactivity. Furthermore, we ; splitting up the player's narrative and my narrative, since it will be easier to link the "name" that players prompted for people to input. I have also added music to the game, to give it a much more mysterious vibe. </sign>
+                                <br> <br>
+                            </p>
+                        </div>
+            
+    
+        </body>
+    
         </section>
 
-        <section class="week">
-            <br>
-            <h2> WEEK 11 </h2> 
-            <div class="entry">
-                <u> <h3> 31 March 2023 </h3> </u>
-                <p> Problems faced: A problem is that I am unable to make the player object move to the right, even though there is no problem with the code. I am also trying to make the obstacles move much more smoothly.
-                    <br> <br>
-                    Progress: I am currently working on the logic of the box dodger game, but I am uncertain whether or not to split up the files, nor how to link the game files together. I have decided not to use an image map, since that is redundant in my opinion. The goal of the box dodger game is to move a character left and right to avoid obstacles moving towards it. Currently, the design of it is such that the box will fall downwards using the concept of cells, but I am also looking at the possibility of it being coming at different directions, and players can use more than the left and right keys. I am really afraid I might not have enough time to complete my game :"" so I will be working on it everyday for Week 12.
-
-                
-                </p>
-            </div>
-
-
-    </body>
+        
