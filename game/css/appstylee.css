@@ -2,6 +2,20 @@
 the background for these games will be the same, so some of the css codes will duplicate from the main.js file*/
 
 body {
+    background-image: url("galaxy.gif");
+}
+
+
+
+
+
+
+
+
+
+
+
+/*body {
     background: #333;
 }
 
@@ -36,4 +50,4 @@ body {
     height: 100%;
     background: rgb(68, 184, 223);
     border-radius: 3%;
-}
+}*/

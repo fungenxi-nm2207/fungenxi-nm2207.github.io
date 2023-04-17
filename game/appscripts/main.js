@@ -1,5 +1,6 @@
 // This JS file mainly sets up the start page and game page structures
 // The start page and game pages
+
 const startPage = document.getElementById("start-page");
 const gamePage1 = document.getElementById("game-page-1");
 const gamePage2 = document.getElementById("game-page-2");
@@ -8,7 +9,7 @@ const gamePage4 = document.getElementById("game-page-4");
 // JS prompt code
 let urname = prompt("please enter your name!");
 // shortcut for if(urname){} else{urname="mysterious stranger"}
-urname = urname || "mysterious stranger";
+urname = urname || "player";
 console.log("Hello " + urname + "!");
 
 // Start game button
@@ -20,7 +21,8 @@ startbutton.addEventListener("click", function (){
 
 // Page 1 (instructions) + JS prompt code
 
-introduction.innerHTML = "hey " + urname + ", welcome to the box, a game that will take you on a journey through the mysteries of life."; 
+introduction.innerHTML = "<h2>Welcome, " + urname + "!</h2><p> The Box has been waiting for one like you, one with the cunning and courage to navigate its treacherous depths. You have been brought here for a purpose, a purpose that will test you to your very limits. Only you can rise to the challenge... <p> But fear not, for you will not face this journey alone. <p> You will be armed with your wits, your courage, and the clues that lie ahead. Together, we will unlock the secrets of The Box, and only then will you emerge victorious. <p><h2>Are you ready to begin?</h2>"; 
+
 // Page 1 (instructions) next button
 const page1Button = document.getElementById("page1-button");
 page1Button.addEventListener("click", function (){
