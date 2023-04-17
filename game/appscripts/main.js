@@ -6,6 +6,7 @@ const gamePage2 = document.getElementById("game-page-2");
 //const gamePage3 = document.getElementById("game-page-3");
 //const gamePage4 = document.getElementById("game-page-4");
 
+
 // JS prompt code
 let urname = prompt("please enter your name!");
 // same as if(urname){} else{urname="mysterious stranger"}
@@ -36,6 +37,7 @@ instructionsButtonX.addEventListener("click", function(){
   instructions.classList.add("hidden");
   gamePage2.classList.remove("hidden");
   window.page2Start = true;
+  // To check if window.page2Start works
   console.log(window.page2Start);
 });
   
@@ -48,6 +50,7 @@ page2Button.classList.add("hidden");
 function showPage2button(){
   if(window.gameOver) {
     page2Button.classList.remove("hidden");
+    startbutton.classList.add("hidden");
   }
 }
 
@@ -56,8 +59,9 @@ function showPage2button(){
 
 // Page 2 button
   page2Button.addEventListener("click", function (){
-    gamePage2.classList.add("hidden");
-    gamePage1.classList.remove("hidden");
+    window.location.reload();
+    //gamePage2.classList.add("hidden");
+    //gamePage1.classList.remove("hidden");
   }); 
 });
 
